@@ -1,15 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import AboutMe from "./AboutMe";
+
+//images
 import Image from "../../assets/landing-page-image.png";
+import Skills from "./Skills";
 
 function Hero({ observer }) {
   const containerRef = useRef(null);
 
   const animationOnImage = (e) => {
-    const speed = 5;
+    const speed = -2;
     const x = (window.innerWidth - e.pageX * speed) / 100;
     const y = (window.innerHeight - e.pageY * speed) / 100;
-    console.log(x, y);
     document.querySelector(".landing-page-image").style.transform = `translateX(${x}px) translateY(${y}px)`;
   };
 
@@ -36,7 +39,12 @@ function Hero({ observer }) {
           <img src={Image} alt="landing page image" />
         </div>
       </div>
-      <div className="example" ref={containerRef}></div>
+      <div className="about-me" ref={containerRef}>
+        <AboutMe />
+      </div>
+      <div className="skills">
+        <Skills />
+      </div>
     </Container>
   );
 }
@@ -103,9 +111,18 @@ const Container = styled.div`
     }
   }
 
-  .example {
+  .about-me {
     width: 100%;
-    height: calc(100vh - 70px);
-    background-color: orange;
+    height: 100vh;
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .skills {
+    width: 100%;
+    height: 100vh;
+    padding-top: 70px;
   }
 `;
