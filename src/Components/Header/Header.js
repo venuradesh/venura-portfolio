@@ -11,7 +11,9 @@ function Header({ scrolled }) {
         <img src={image} alt="Logo" className="logo" />
       </div>
       <div className="naviagtions">
-        <div className="about nav-item">About</div>
+        <a className="about nav-item" href="#about">
+          About
+        </a>
         <div className="skills nav-item">Skills</div>
         <div className="project nav-item">Projects</div>
         <div className="contact nav-item">Contact</div>
@@ -31,8 +33,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: var(--bg-clr-blur);
-  backdrop-filter: blur(60px);
+  backdrop-filter: blur(5px);
   padding: 0 4%;
+  z-index: 100;
 
   &.scrolled {
     box-shadow: 0 0 5px 1px var(--bg-clr-alt);
