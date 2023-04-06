@@ -75,7 +75,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 50px;
 
   .title {
     font-size: var(--font-m);
@@ -86,13 +86,14 @@ const Container = styled.div`
 
   .skills-section {
     width: 100%;
-    height: 100%;
+    height: max-content;
     background-color: var(--bg-clr-alt);
     border-radius: 18px;
     padding: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    row-gap: 50px;
+    justify-content: space-evenly;
   }
 `;
 
