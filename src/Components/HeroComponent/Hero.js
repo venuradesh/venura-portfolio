@@ -5,6 +5,7 @@ import AboutMe from "./AboutMe";
 //images
 import Image from "../../assets/landing-page-image.png";
 import Skills from "./Skills";
+import Projects from "./Projects";
 
 function Hero({ observer }) {
   const containerRef = useRef(null);
@@ -17,7 +18,7 @@ function Hero({ observer }) {
   };
 
   useEffect(() => {
-    document.querySelector(".landing-page-image").addEventListener("mousemove", animationOnImage);
+    // document.querySelector(".landing-page-image").addEventListener("mousemove", animationOnImage);
     if (containerRef) observer.observe(containerRef.current);
   }, [containerRef]);
 
@@ -39,11 +40,16 @@ function Hero({ observer }) {
           <img src={Image} alt="landing page image" />
         </div>
       </div>
-      <div className="about-me" ref={containerRef}>
-        <AboutMe />
-      </div>
-      <div className="skills">
-        <Skills />
+      <div className="contents" ref={containerRef}>
+        <div className="about-me">
+          <AboutMe />
+        </div>
+        <div className="skills">
+          <Skills />
+        </div>
+        <div className="projects">
+          <Projects />
+        </div>
       </div>
     </Container>
   );
@@ -123,6 +129,12 @@ const Container = styled.div`
   .skills {
     width: 100%;
     height: 100vh;
+    padding-top: 70px;
+  }
+
+  .projects {
+    width: 100%;
+    height: max-content;
     padding-top: 70px;
   }
 `;
