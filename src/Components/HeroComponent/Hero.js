@@ -4,8 +4,11 @@ import AboutMe from "./AboutMe";
 
 //images
 import Image from "../../assets/landing-page-image.png";
+
+//components
 import Skills from "./Skills";
 import Projects from "./Projects";
+import Contact from "./Contact";
 
 function Hero({ observer }) {
   const containerRef = useRef(null);
@@ -50,6 +53,10 @@ function Hero({ observer }) {
         <div className="projects">
           <Projects />
         </div>
+        <div className="contact">
+          <Contact />
+        </div>
+        <div className="footer">Designed & Developed by Venura Warnasooriya 🚀🚀</div>
       </div>
     </Container>
   );
@@ -136,5 +143,16 @@ const Container = styled.div`
     width: 100%;
     height: max-content;
     padding-top: 70px;
+  }
+
+  .footer {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: var(--font-s);
+    font-family: var(--mono-font);
   }
 `;

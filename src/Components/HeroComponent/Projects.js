@@ -4,6 +4,9 @@ import Project from "../Parts/Project";
 //data
 import projectData from "../../ProjectData/projectData";
 
+//images
+import Seemore from "../../assets/see-more.png";
+
 const Projects = () => {
   return (
     <Container>
@@ -13,6 +16,11 @@ const Projects = () => {
           <Project key={index} data={content} index={index} />
         ))}
       </div>
+      <div className="see-more-section">
+        <div className="seemore">
+          see more <img src={Seemore} alt="see-more" />
+        </div>
+      </div>
     </Container>
   );
 };
@@ -21,6 +29,7 @@ export default Projects;
 
 const Container = styled.div`
   padding-inline: 50px;
+  margin-bottom: 50px;
 
   .title {
     font-size: var(--font-m);
@@ -28,5 +37,25 @@ const Container = styled.div`
     font-family: var(--mono-font);
     text-transform: lowercase;
     color: var(--theme1);
+  }
+
+  .see-more-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+
+    .seemore {
+      color: var(--theme1);
+      font-size: var(--font-s);
+      display: flex;
+      column-gap: 10px;
+      align-items: center;
+
+      img {
+        width: 15px;
+      }
+    }
   }
 `;
