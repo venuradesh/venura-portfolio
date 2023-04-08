@@ -10,6 +10,9 @@ import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
 
+//files
+import CV from "../../assets/venura-warnasooriya.pdf";
+
 function Hero({ observer }) {
   const containerRef = useRef(null);
 
@@ -33,10 +36,17 @@ function Hero({ observer }) {
           <div className="name">Venura Warnasooriya</div>
           <div className="title">
             <span className="span1">I'm a </span>
-            <span className="span2">Full Stack Web Developer</span>
+            <span className="span2">Full Stack Developer</span>
           </div>
           <div className="btn-container">
-            <div className="contact btn">Contact me</div>
+            <div className="contact btn">
+              <a href="mailto:venurawarnasooriya@gmail.com">Contact me</a>
+            </div>
+            <div className="resume btn">
+              <a href={CV} download={"venura-warnasooriya-cv.pdf"}>
+                Resume
+              </a>
+            </div>
           </div>
         </div>
         <div className="landing-page-image">
@@ -99,6 +109,9 @@ const Container = styled.div`
 
       .btn-container {
         margin-top: 15px;
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
 
         .btn {
           border: 1px solid var(--theme1);
@@ -107,6 +120,30 @@ const Container = styled.div`
           padding: 10px 15px;
           font-size: var(--font-s);
           border-radius: 8px;
+          position: relative;
+          overflow: hidden;
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--theme1);
+            transform-origin: left;
+            transform: translateX(-100%);
+            transition: all 0.3s ease;
+            z-index: -1;
+          }
+
+          &:hover {
+            color: var(--white);
+
+            &:after {
+              transform: translateX(0%);
+            }
+          }
         }
       }
     }
@@ -154,5 +191,58 @@ const Container = styled.div`
     color: var(--white);
     font-size: var(--font-s);
     font-family: var(--mono-font);
+  }
+
+  @media only screen and (max-width: 768px) {
+    .landing-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .landing-page-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 500px;
+          height: 500px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    .landing-page {
+      .content {
+        .title {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .span1 {
+            font-size: var(--font-s);
+          }
+        }
+      }
+
+      .landing-page-image {
+        height: 60%;
+        align-items: center;
+
+        img {
+          width: 320px;
+          height: 320px;
+        }
+      }
+    }
   }
 `;
