@@ -30,6 +30,16 @@
   --logo-size: 2.5rem;
 }
 
+@media only screen and (max-width: 430px) {
+  :root {
+    --font-s: 0.6rem;
+    --font-n: 0.8rem;
+    --font-m: 1rem;
+    --font-l: 1.3rem;
+    --font-xl: 1.8rem;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
