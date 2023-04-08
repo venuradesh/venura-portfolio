@@ -21,7 +21,7 @@ function Header({ scrolled }) {
       </div>
 
       <div className="hamburger">
-        {hamClicked ? <div className="backdrop"></div> : <></>}
+        {hamClicked ? <div className="backdrop" onClick={() => setHamClicked(false)}></div> : <></>}
         <div className={`hamburger-icon ${hamClicked ? "active" : ""}`} onClick={() => setHamClicked(!hamClicked)}>
           <span></span>
           <span></span>

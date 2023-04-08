@@ -163,8 +163,7 @@ const Container = styled.div`
 
   .about-me {
     width: 100%;
-    height: 100vh;
-    padding-top: 70px;
+    height: max-content;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -217,6 +216,10 @@ const Container = styled.div`
           height: 500px;
         }
       }
+    }
+
+    .contents {
+      overflow: hidden;
     }
   }
 
