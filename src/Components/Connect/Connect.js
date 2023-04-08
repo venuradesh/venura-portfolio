@@ -83,6 +83,10 @@ const Container = styled.div`
       stroke-dashoffset: 0;
     }
   }
+
+  @media only screen and (max-width: 430px) {
+    display: none;
+  }
 `;
 
 const LeftSide = styled.div`

@@ -47,6 +47,7 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
+  padding-top: 70px;
 
   .about-me-section {
     width: 100%;
@@ -142,6 +143,56 @@ const Container = styled.div`
       }
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    .about-me-section {
+      flex-direction: column-reverse;
+
+      .profile-section {
+        margin-bottom: 50px;
+        margin-top: 150px;
+
+        .pic {
+          img {
+            width: 150px;
+          }
+        }
+
+        .border {
+          width: 170px;
+          height: 170px;
+        }
+      }
+
+      .desc {
+        height: max-content;
+        height: 300px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    .about-me-section {
+      width: 100%;
+      padding-inline: 0px;
+
+      .profile-section {
+        margin-bottom: 30px;
+        margin-top: 120px;
+
+        .pic {
+          img {
+            width: 120px;
+          }
+        }
+
+        .border {
+          width: 130px;
+          height: 130px;
+        }
+      }
+    }
+  }
 `;
 
 const DevSteps = styled.div`
@@ -151,10 +202,11 @@ const DevSteps = styled.div`
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-top: 80px;
 
   .box {
     width: 350px;
-    height: 100%;
+    height: 250px;
     border: 1px solid;
     border-radius: 18px;
     padding: 15px;
@@ -199,6 +251,19 @@ const DevSteps = styled.div`
     .title,
     .content {
       color: var(--theme1);
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    column-gap: 20px;
+    row-gap: 30px;
+    padding-top: 30px;
+
+    .box {
+      width: 500px;
+      height: max-content;
     }
   }
 `;
