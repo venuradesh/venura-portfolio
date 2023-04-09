@@ -58,4 +58,23 @@ const Container = styled.div`
       }
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    padding: 0px;
+    margin-bottom: 0px;
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      row-gap: 80px;
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    margin-bottom: 50px;
+
+    .projects {
+      row-gap: 10px;
+    }
+  }
 `;

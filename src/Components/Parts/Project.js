@@ -10,7 +10,7 @@ function Project({ data, index }) {
 
   return (
     <Container cover={data.cover} className={index % 2 == 0 ? "right-align" : "left-align"}>
-      <div className="cover-container"></div>
+      <div className={`cover-container ${data.title === "Sri EventZ Web" ? "srieventz" : ""}`}></div>
       <div className="content-container">
         <div className="background"></div>
         <div className="caption">featured project</div>
@@ -185,6 +185,59 @@ const Container = styled.div`
             }
           }
         }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .cover-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      &.srieventz {
+        min-width: 300px;
+        min-height: 400px;
+        background-size: cover;
+      }
+    }
+
+    .content-container {
+      position: relative;
+      top: -10%;
+      transform: translateY(0%);
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    .content-container {
+      width: 100%;
+      top: -15px;
+
+      .skills {
+        .items {
+          row-gap: 5px;
+
+          .item {
+            padding: 8px 20px;
+          }
+        }
+      }
+    }
+
+    .cover-container {
+      width: 100%;
+      height: 200px;
+
+      &.srieventz {
+        min-width: 100%;
+        min-height: 200px;
+        height: 200px;
       }
     }
   }
