@@ -39,6 +39,12 @@ const Container = styled.div`
     color: var(--theme1);
   }
 
+  .projects {
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+  }
+
   .see-more-section {
     width: 100%;
     display: flex;
@@ -62,12 +68,6 @@ const Container = styled.div`
   @media only screen and (max-width: 768px) {
     padding: 0px;
     margin-bottom: 0px;
-
-    .projects {
-      display: flex;
-      flex-direction: column;
-      row-gap: 80px;
-    }
   }
 
   @media only screen and (max-width: 430px) {

@@ -16,7 +16,7 @@ function Connect() {
         <a href="https://www.facebook.com/venura.warnasooriya" target="_blank">
           <Facebook className="img" />
         </a>
-        <a href="">
+        <a href="https://www.instagram.com/_desh9879_" target="_blank">
           <Instagram className="img" />
         </a>
         <a href="https://twitter.com/VenuraWarnasoo2" target="_blank">
