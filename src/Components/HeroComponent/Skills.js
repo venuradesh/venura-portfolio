@@ -36,8 +36,8 @@ const Skills = () => {
               <span>Node Js</span>
               <span>Express Js</span>
             </div>
-            <div className="desc">Databases I frequently use</div>
-            <div className="items">
+            <div className="desc db">Databases I frequently use</div>
+            <div className="items db-items">
               <span>Firebase</span>
               <span>Mongo DB</span>
               <span>MySQL</span>
@@ -94,6 +94,13 @@ const Container = styled.div`
     flex-direction: column;
     row-gap: 50px;
     justify-content: space-evenly;
+
+    @media only screen and (max-width: 768px) {
+      row-gap: 20px;
+    }
+  }
+  @media only screen and (max-width: 430px) {
+    padding: 0px;
   }
 `;
 
@@ -132,6 +139,79 @@ const Languages = styled.div`
       row-gap: 10px;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+
+    .lang {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: repeat(2, max-content);
+      align-items: top;
+      column-gap: 15px;
+
+      .title {
+        grid-row: 1/-1;
+        grid-column: 1;
+        align-self: top;
+        flex-wrap: wrap;
+        text-align: left;
+      }
+
+      .desc {
+        text-align: left;
+        grid-row: 1;
+        grid-column: 2;
+      }
+
+      .items {
+        grid-column: 2;
+        grid-row: 2;
+        flex-direction: row;
+        column-gap: 20px;
+        flex-wrap: wrap;
+        row-gap: 0px;
+
+        span {
+          width: max-content;
+        }
+      }
+    }
+
+    .backend-dev {
+      grid-template-rows: repeat(4, max-content);
+
+      .db {
+        grid-row: 3;
+      }
+
+      .db-items {
+        grid-row: 4;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    row-gap: 20px;
+
+    .lang {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+
+      .title {
+        font-size: 0.8rem;
+      }
+
+      .desc {
+        font-size: 0.6rem;
+      }
+
+      .items {
+        font-size: 0.6rem;
+      }
+    }
+  }
 `;
 
 const IDEs = styled.div`
@@ -149,5 +229,28 @@ const IDEs = styled.div`
     color: var(--white);
     font-size: var(--font-s);
     font-weight: var(--font-w-300);
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 15px;
+
+    .title {
+      grid-column: 1;
+      grid-row: 1;
+      text-align: left;
+    }
+
+    .desc {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
   }
 `;

@@ -203,6 +203,7 @@ const DevSteps = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin-top: 80px;
+  row-gap: 30px;
 
   .box {
     width: 350px;
