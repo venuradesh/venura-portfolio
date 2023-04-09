@@ -1,6 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
+//documents
+import CV from "../../assets/venura-warnasooriya.pdf";
+
+//images
+import { ReactComponent as Facebook } from "../../assets/SVG/facebook.svg";
+import { ReactComponent as Instagram } from "../../assets/SVG/instagram.svg";
+import { ReactComponent as Twitter } from "../../assets/SVG/twitter.svg";
+import { ReactComponent as LinkedIn } from "../../assets/SVG/linkedin.svg";
+import { ReactComponent as Github } from "../../assets/SVG/github.svg";
+
 function Contact() {
   return (
     <Container>
@@ -13,8 +23,29 @@ function Contact() {
           simply wants to say hello!
         </div>
         <div className="btn-container">
-          <div className="btn hello">Say Hello</div>
-          <div className="btn resume">Resume</div>
+          <a className="btn hello" href="mailto:venurawarnasooriya@gmail.com">
+            Say Hello
+          </a>
+          <a className="btn resume" href={CV} download={"venura-warnasooriya-cv.pdf"}>
+            Resume
+          </a>
+        </div>
+        <div className="other-contacts">
+          <a href="https://www.facebook.com/venura.warnasooriya" target="_blank">
+            <Facebook className="img" />
+          </a>
+          <a href="https://www.instagram.com/_desh9879_/" target="_blank">
+            <Instagram className="img" />
+          </a>
+          <a href="https://twitter.com/VenuraWarnasoo2" target="_blank">
+            <Twitter className="img" />
+          </a>
+          <a href="www.linkedin.com/in/venurawarnasooriya" target="_blank">
+            <LinkedIn className="img" />
+          </a>
+          <a href="https://github.com/venuradesh" target="_blank">
+            <Github className="img" />
+          </a>
         </div>
       </div>
     </Container>
@@ -88,6 +119,46 @@ const Container = styled.div`
             transform: translateX(0%);
           }
         }
+      }
+    }
+
+    .other-contacts {
+      width: 80%;
+      justify-content: space-between;
+      margin-top: 50px;
+      display: none;
+
+      .img {
+        width: var(--icon-size);
+        height: var(--icon-size);
+        position: relative;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        .path {
+          fill-opacity: 0;
+          stroke: var(--theme1);
+          stroke-width: 1px;
+          stroke-dashoffset: 0;
+          stroke-dasharray: 5000;
+          animation: pathAnimation 10s ease-in-out;
+        }
+      }
+      @keyframes pathAnimation {
+        0% {
+          stroke-dashoffset: 5000;
+        }
+
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @media only screen and (max-width: 430px) {
+        display: flex;
       }
     }
   }
