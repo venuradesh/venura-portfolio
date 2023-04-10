@@ -5,7 +5,9 @@ import styled from "styled-components";
 //components
 import Header from "./Components/Header/Header";
 import Hero from "./Components/HeroComponent/Hero";
+import HeroAdmin from "./Components/Admin/HeroAdmin";
 import Connect from "./Components/Connect/Connect";
+import AdminHeader from "./Components/Admin/AdminHeader";
 
 function App() {
   let observer = null;
@@ -33,13 +35,33 @@ function App() {
   return (
     <Router>
       <Container>
-        <Header scrolled={scrolled} />
-        <Connect />
-        <Content>
-          <Routes>
-            <Route exact path="/" element={<Hero observer={observer} />} />{" "}
-          </Routes>
-        </Content>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <Header scrolled={scrolled} />
+                <Connect />
+                <Content>
+                  <Hero observer={observer} />
+                </Content>
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/admin"
+            element={
+              <>
+                <AdminHeader />
+                <Content>
+                  <HeroAdmin />
+                </Content>
+              </>
+            }
+          />
+        </Routes>
       </Container>
     </Router>
   );
