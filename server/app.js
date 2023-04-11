@@ -27,6 +27,7 @@ app.get("/checkUser", async (req, res) => {
   const q = query(collection(db, "User"), where("username", "==", username));
   try {
     const querySnapshot = await getDocs(q);
+    if (querySnapshot.docs.length === 0) throw "username not exist";
     querySnapshot.docs.map((doc) => {
       if (doc.data().password === password) {
         res.status(200).send({ message: "valid", error: false });

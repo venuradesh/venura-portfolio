@@ -19,6 +19,7 @@ const Container = styled.div`
   padding-inline: 50px;
   border-bottom: 1px solid var(--bg-clr-alt);
   cursor: pointer;
+  transition: all 0.3s ease;
 
   &:first-of-type {
     border-top: 1px solid var(--bg-clr-alt);
