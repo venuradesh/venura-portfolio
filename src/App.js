@@ -55,9 +55,7 @@ function App() {
             element={
               <>
                 <AdminHeader />
-                <Content>
-                  <HeroAdmin />
-                </Content>
+                <HeroAdmin />
               </>
             }
           />
@@ -76,6 +74,7 @@ const Container = styled.div`
   min-height: 100vh;
   padding: 0 0;
   position: relative;
+  z-index: 0;
 `;
 
 const Content = styled.div`
