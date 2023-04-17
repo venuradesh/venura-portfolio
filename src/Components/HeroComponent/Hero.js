@@ -16,15 +16,7 @@ import CV from "../../assets/venura-warnasooriya.pdf";
 function Hero({ observer }) {
   const containerRef = useRef(null);
 
-  const animationOnImage = (e) => {
-    const speed = -2;
-    const x = (window.innerWidth - e.pageX * speed) / 100;
-    const y = (window.innerHeight - e.pageY * speed) / 100;
-    document.querySelector(".landing-page-image").style.transform = `translateX(${x}px) translateY(${y}px)`;
-  };
-
   useEffect(() => {
-    // document.querySelector(".landing-page-image").addEventListener("mousemove", animationOnImage);
     if (containerRef) observer.observe(containerRef.current);
   }, [containerRef]);
 

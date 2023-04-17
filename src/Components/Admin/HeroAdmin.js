@@ -92,7 +92,6 @@ const Login = styled.div`
   height: 100vh;
   position: fixed;
   z-index: 100;
-  /* background-color: red; */
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;

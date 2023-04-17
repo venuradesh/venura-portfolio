@@ -9,7 +9,7 @@ function Project({ data, index }) {
   console.log(data);
 
   return (
-    <Container cover={data.cover} className={index % 2 == 0 ? "right-align" : "left-align"}>
+    <Container cover={data.cover} className={index % 2 === 0 ? "right-align" : "left-align"}>
       <div className={`cover-container ${data.title === "Sri EventZ Web" ? "srieventz" : ""}`}></div>
       <div className="content-container">
         <div className="background"></div>
